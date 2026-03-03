@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaher Trade | Premier Gold & Currency Exchange</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-coins logo-icon"></i>
+            <span>Zaher Trade</span>
+        </div>
+        <div class="live-status">
+            <span class="pulse-dot"></span>
+            <span>Live Market Data</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <!-- Live Global Gold Prices Section -->
+        <section class="section-gold-matrix glass-panel">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-weight-scale"></i> Live Global Gold Prices</h2>
+                <div class="last-updated" id="gold-last-updated">Updating...</div>
+            </div>
+            
+            <p class="section-desc">Real-time gold spot prices localized to major global regions and the Middle East.</p>
+
+            <!-- Quick Glane Bar -->
+            <div class="quick-glance gq-container">
+                <div class="gq-card">
+                    <span class="gq-label">Gold Spot (USD/oz)</span>
+                    <span class="gq-value glow-text highlight-usd" id="spot-usd">--</span>
+                </div>
+                <div class="gq-card">
+                    <span class="gq-label">Gold Spot (EUR/oz)</span>
+                    <span class="gq-value highlight-eur" id="spot-eur">--</span>
+                </div>
+                <div class="gq-card">
+                    <span class="gq-label">Silver Spot (USD/oz)</span>
+                    <span class="gq-value highlight-silver" id="spot-silver-usd">--</span>
+                </div>
+            </div>
+
+            <!-- Detailed Regional Table -->
+            <div class="table-responsive">
+                <table class="gold-table">
+                    <thead>
+                        <tr>
+                            <th>Region / Currency</th>
+                            <th>24K (Pure) /g</th>
+                            <th>22K /g</th>
+                            <th>21K (Popular) /g</th>
+                            <th>18K /g</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gold-table-body">
+                        <!-- Populated by JS -->
+                        <tr><td colspan="5" class="loading-cell">Loading live data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Currency Converter Section -->
+        <section class="section-currency-exchange glass-panel">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-arrow-right-arrow-left"></i> Universal Currency Exchange</h2>
+                <div class="last-updated" id="fiat-last-updated">Updating...</div>
+            </div>
+
+            <p class="section-desc">Instantly convert cross-rates for primary and Arab currencies with live precision.</p>
+
+            <div class="exchange-widget">
+                <div class="exchange-group">
+                    <label>Amount</label>
+                    <input type="number" id="exchange-amount" value="100" min="0" step="any">
+                </div>
+
+                <div class="exchange-controls">
+                    <div class="exchange-group currency-select-group">
+                        <label>From</label>
+                        <select class="custom-select" id="exchange-from">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                    <button class="swap-btn" id="swap-currencies" title="Swap Currencies">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+
+                    <div class="exchange-group currency-select-group">
+                        <label>To</label>
+                        <select class="custom-select" id="exchange-to">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="exchange-result-container">
+                    <span class="result-amount" id="exchange-result">--</span>
+                    <span class="result-rate" id="exchange-rate-info">1 USD = -- EUR</span>
+                </div>
+            </div>
+
+            <div class="popular-pairs">
+                <h3>Popular Pairs</h3>
+                <div class="pair-chips">
+                    <button class="pair-chip active" data-from="USD" data-to="EUR">USD / EUR</button>
+                    <button class="pair-chip" data-from="USD" data-to="TRY">USD / TRY</button>
+                    <button class="pair-chip" data-from="EUR" data-to="TRY">EUR / TRY</button>
+                    <button class="pair-chip" data-from="USD" data-to="SYP">USD / SYP</button>
+                    <button class="pair-chip" data-from="AED" data-to="SAR">AED / SAR</button>
+                    <button class="pair-chip" data-from="CAD" data-to="USD">CAD / USD</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AuraTrade Global Markets &copy; 2026. Powered by live decentralized market APIs. For informational purposes only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
